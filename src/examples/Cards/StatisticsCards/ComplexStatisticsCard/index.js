@@ -46,7 +46,7 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
             // sx={navbarIconButton}
             // onClick={handleDarkMode}
           >
-            <Icon color="success">edit</Icon>
+            <Icon color="secondary">edit</Icon>
           </IconButton>
           <IconButton
             size="small"

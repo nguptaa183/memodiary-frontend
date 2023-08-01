@@ -15,6 +15,7 @@ Coded by www.creative-tim.com
 
 // @mui material components
 import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -34,6 +35,7 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 // Dashboard components
 import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
+import MDTypography from "components/MDTypography";
 
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
@@ -41,20 +43,20 @@ function Dashboard() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
+      <MDBox mt={2} px={2}>
+        <MDTypography variant="h3">Notes</MDTypography>
+      </MDBox>
       <MDBox py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
+              {/* <Paper elevation={3} /> */}
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="Bookings"
-                count={281}
-                percentage={{
-                  color: "success",
-                  amount: "+55%",
-                  label: "than lask week",
-                }}
+                title="Food"
+                // count={281}
+                count="Veniam sint id non dolore ullamco id voluptate laboris aliqua voluptate esse culpa elit et."
               />
             </MDBox>
           </Grid>
@@ -62,8 +64,8 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 icon="leaderboard"
-                title="Today's Users"
-                count="2,300"
+                title="Cloth"
+                count="Esse consequat incididunt ex commodo consequat ea sint consectetur adipisicing labore proident fugiat voluptate."
                 percentage={{
                   color: "success",
                   amount: "+3%",
@@ -77,8 +79,8 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="success"
                 icon="store"
-                title="Revenue"
-                count="34k"
+                title="Book"
+                count="Qui sit enim labore duis commodo amet Lorem enim officia elit."
                 percentage={{
                   color: "success",
                   amount: "+1%",
@@ -92,8 +94,8 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="primary"
                 icon="person_add"
-                title="Followers"
-                count="+91"
+                title="Table"
+                count="Cillum qui proident minim incididunt esse."
                 percentage={{
                   color: "success",
                   amount: "",
@@ -103,6 +105,10 @@ function Dashboard() {
             </MDBox>
           </Grid>
         </Grid>
+
+        <MDBox py={2} px={2}>
+          <MDTypography variant="h3">Videos</MDTypography>
+        </MDBox>
         <MDBox mt={4.5}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>
@@ -141,16 +147,6 @@ function Dashboard() {
                   chart={tasks}
                 />
               </MDBox>
-            </Grid>
-          </Grid>
-        </MDBox>
-        <MDBox>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={8}>
-              <Projects />
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <OrdersOverview />
             </Grid>
           </Grid>
         </MDBox>

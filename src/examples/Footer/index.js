@@ -60,7 +60,7 @@ function Footer({ company, links }) {
         fontSize={size.sm}
         px={1.5}
       >
-        &copy; {new Date().getFullYear()}, made with
+        &copy; {new Date().getFullYear()}, UI made with
         <MDBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
           <Icon color="inherit" fontSize="inherit">
             favorite
@@ -91,7 +91,7 @@ function Footer({ company, links }) {
           },
         })}
       >
-        {renderLinks()}
+        {/* {renderLinks()} */}
       </MDBox>
     </MDBox>
   );

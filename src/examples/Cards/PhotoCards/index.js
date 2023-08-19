@@ -24,6 +24,7 @@ import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import CardMedia from "@mui/material/CardMedia";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -33,7 +34,7 @@ import NotificationItem from "examples/Items/NotificationItem";
 // Custom styles for DashboardNavbar
 import { navbarIconButton } from "examples/Navbars/DashboardNavbar/styles";
 
-function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
+function PhotoCard({ color, title, count, percentage, icon }) {
   const [openMenu, setOpenMenu] = useState(false);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
@@ -58,35 +59,42 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
     <Card>
       <MDBox py={2} px={2}>
         <MDBox pb={1} display="flex" justifyContent="space-between">
-          <MDBox textAlign="right" lineHeight={1.25}>
+          <MDBox textAlign="left" lineHeight={1.25}>
             <MDTypography variant="h6">{title}</MDTypography>
           </MDBox>
-          <IconButton
-            size="small"
-            disableRipple
-            color="inherit"
-            sx={navbarIconButton}
-            aria-controls="notification-menu"
-            aria-haspopup="true"
-            variant="contained"
-            onClick={handleOpenMenu}
-          >
-            <Icon fontSize="small" color="inherit">
-              more_vert
-            </Icon>
-          </IconButton>
-          {renderMenu()}
+          <MDBox textAlign="right">
+            <IconButton
+              size="small"
+              disableRipple
+              color="inherit"
+              sx={navbarIconButton}
+              aria-controls="notification-menu"
+              aria-haspopup="true"
+              variant="contained"
+              onClick={handleOpenMenu}
+            >
+              <Icon fontSize="inherit" color="inherit" sx={{ marginRight: "-0.75rem" }}>
+                more_vert
+              </Icon>
+            </IconButton>
+            {renderMenu()}
+          </MDBox>
         </MDBox>
-        <MDTypography variant="button" fontWeight="light" color="text">
-          {count}
-        </MDTypography>
+        <MDBox>
+          <img
+            height="auto"
+            width="100%"
+            src="https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg"
+            alt="green iguana"
+          />
+        </MDBox>
       </MDBox>
     </Card>
   );
 }
 
-// Setting default values for the props of ComplexStatisticsCard
-ComplexStatisticsCard.defaultProps = {
+// Setting default values for the props of PhotoCard
+PhotoCard.defaultProps = {
   color: "info",
   percentage: {
     color: "success",
@@ -95,8 +103,8 @@ ComplexStatisticsCard.defaultProps = {
   },
 };
 
-// Typechecking props for the ComplexStatisticsCard
-ComplexStatisticsCard.propTypes = {
+// Typechecking props for the PhotoCard
+PhotoCard.propTypes = {
   color: PropTypes.oneOf([
     "primary",
     "secondary",
@@ -126,4 +134,4 @@ ComplexStatisticsCard.propTypes = {
   icon: PropTypes.node.isRequired,
 };
 
-export default ComplexStatisticsCard;
+export default PhotoCard;

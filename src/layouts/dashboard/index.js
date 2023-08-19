@@ -16,6 +16,8 @@ Coded by www.creative-tim.com
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -27,6 +29,8 @@ import Footer from "examples/Footer";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
+import NoteCard from "examples/Cards/NoteCards";
+import PhotoCard from "examples/Cards/PhotoCards";
 
 // Data
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
@@ -44,25 +48,37 @@ function Dashboard() {
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox mt={2} px={2}>
-        <MDTypography variant="h3">Notes</MDTypography>
+        <MDTypography variant="h3">
+          Notes
+          <span>
+            <IconButton
+              size="medium"
+              // color="inherit"
+              // sx={navbarIconButton}
+              // onClick={handleDarkMode}
+            >
+              <Icon color="info">post_add</Icon>
+            </IconButton>
+          </span>
+        </MDTypography>
       </MDBox>
       <MDBox py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               {/* <Paper elevation={3} /> */}
-              <ComplexStatisticsCard
+              <NoteCard
                 color="dark"
                 icon="weekend"
                 title="Food"
                 // count={281}
-                count="Veniam sint id non dolore ullamco id voluptate laboris aliqua voluptate esse culpa elit et."
+                count="Est aliqua et consectetur commodo."
               />
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard
+              <NoteCard
                 icon="leaderboard"
                 title="Cloth"
                 count="Esse consequat incididunt ex commodo consequat ea sint consectetur adipisicing labore proident fugiat voluptate."
@@ -76,7 +92,7 @@ function Dashboard() {
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard
+              <NoteCard
                 color="success"
                 icon="store"
                 title="Book"
@@ -91,7 +107,7 @@ function Dashboard() {
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard
+              <NoteCard
                 color="primary"
                 icon="person_add"
                 title="Table"
@@ -107,44 +123,75 @@ function Dashboard() {
         </Grid>
 
         <MDBox py={2} px={2}>
-          <MDTypography variant="h3">Videos</MDTypography>
+          <MDTypography variant="h3">
+            Photos
+            <span>
+              <IconButton
+                size="medium"
+                // color="inherit"
+                // sx={navbarIconButton}
+                // onClick={handleDarkMode}
+              >
+                <Icon color="info">post_add</Icon>
+              </IconButton>
+            </span>
+          </MDTypography>
         </MDBox>
-        <MDBox mt={4.5}>
+        <MDBox mt={2}>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mb={3}>
-                <ReportsBarChart
-                  color="info"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
-                  chart={reportsBarChartData}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mb={3}>
-                <ReportsLineChart
-                  color="success"
-                  title="daily sales"
-                  description={
-                    <>
-                      (<strong>+15%</strong>) increase in today sales.
-                    </>
-                  }
-                  date="updated 4 min ago"
-                  chart={sales}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mb={3}>
-                <ReportsLineChart
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox mb={1.5}>
+                {/* <Paper elevation={3} /> */}
+                <PhotoCard
                   color="dark"
-                  title="completed tasks"
-                  description="Last Campaign Performance"
-                  date="just updated"
-                  chart={tasks}
+                  icon="weekend"
+                  title="Food"
+                  // count={281}
+                  count="Est aliqua et consectetur commodo."
+                />
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox mb={1.5}>
+                <PhotoCard
+                  icon="leaderboard"
+                  title="Cloth"
+                  count="Esse consequat incididunt ex commodo consequat ea sint consectetur adipisicing labore proident fugiat voluptate."
+                  percentage={{
+                    color: "success",
+                    amount: "+3%",
+                    label: "than last month",
+                  }}
+                />
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox mb={1.5}>
+                <PhotoCard
+                  color="success"
+                  icon="store"
+                  title="Book"
+                  count="Qui sit enim labore duis commodo amet Lorem enim officia elit."
+                  percentage={{
+                    color: "success",
+                    amount: "+1%",
+                    label: "than yesterday",
+                  }}
+                />
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox mb={1.5}>
+                <PhotoCard
+                  color="primary"
+                  icon="person_add"
+                  title="Table"
+                  count="Cillum qui proident minim incididunt esse."
+                  percentage={{
+                    color: "success",
+                    amount: "",
+                    label: "Just updated",
+                  }}
                 />
               </MDBox>
             </Grid>

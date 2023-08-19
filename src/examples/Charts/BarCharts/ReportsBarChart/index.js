@@ -20,6 +20,18 @@ import PropTypes from "prop-types";
 
 // react-chartjs-2 components
 import { Bar } from "react-chartjs-2";
+
+import {
+  Player,
+  ControlBar,
+  ReplayControl,
+  ForwardControl,
+  CurrentTimeDisplay,
+  TimeDivider,
+  PlaybackRateMenuButton,
+  VolumeMenuButton,
+} from "video-react";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -61,9 +73,7 @@ function ReportsBarChart({ color, title, description, date, chart }) {
               pr={0.5}
               mt={-5}
               height="12.5rem"
-            >
-              <Bar data={data} options={options} redraw />
-            </MDBox>
+            ></MDBox>
           ),
           [color, chart]
         )}

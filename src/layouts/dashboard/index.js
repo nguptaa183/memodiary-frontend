@@ -26,11 +26,7 @@ import MDBox from "components/MDBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
-import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 import NoteCard from "examples/Cards/NoteCards";
-import PhotoCard from "examples/Cards/PhotoCards";
 
 // Data
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
@@ -121,82 +117,6 @@ function Dashboard() {
             </MDBox>
           </Grid>
         </Grid>
-
-        <MDBox py={2} px={2}>
-          <MDTypography variant="h3">
-            Photos
-            <span>
-              <IconButton
-                size="medium"
-                // color="inherit"
-                // sx={navbarIconButton}
-                // onClick={handleDarkMode}
-              >
-                <Icon color="info">post_add</Icon>
-              </IconButton>
-            </span>
-          </MDTypography>
-        </MDBox>
-        <MDBox mt={2}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                {/* <Paper elevation={3} /> */}
-                <PhotoCard
-                  color="dark"
-                  icon="weekend"
-                  title="Food"
-                  // count={281}
-                  count="Est aliqua et consectetur commodo."
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <PhotoCard
-                  icon="leaderboard"
-                  title="Cloth"
-                  count="Esse consequat incididunt ex commodo consequat ea sint consectetur adipisicing labore proident fugiat voluptate."
-                  percentage={{
-                    color: "success",
-                    amount: "+3%",
-                    label: "than last month",
-                  }}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <PhotoCard
-                  color="success"
-                  icon="store"
-                  title="Book"
-                  count="Qui sit enim labore duis commodo amet Lorem enim officia elit."
-                  percentage={{
-                    color: "success",
-                    amount: "+1%",
-                    label: "than yesterday",
-                  }}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <PhotoCard
-                  color="primary"
-                  icon="person_add"
-                  title="Table"
-                  count="Cillum qui proident minim incididunt esse."
-                  percentage={{
-                    color: "success",
-                    amount: "",
-                    label: "Just updated",
-                  }}
-                />
-              </MDBox>
-            </Grid>
-          </Grid>
-        </MDBox>
       </MDBox>
       <Footer />
     </DashboardLayout>

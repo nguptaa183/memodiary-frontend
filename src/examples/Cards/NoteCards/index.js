@@ -72,12 +72,20 @@ function NoteCard({ color, title, count, percentage, icon }) {
               variant="contained"
               onClick={handleOpenMenu}
             >
-              <Icon fontSize="inherit" color="inherit" sx={{ marginRight: "-0.75rem" }}>
+              <Icon fontSize="inherit" color="inherit" sx={{ marginRight: "-0.9rem" }}>
                 more_vert
               </Icon>
             </IconButton>
             {renderMenu()}
           </MDBox>
+        </MDBox>
+        <MDBox>
+          <img
+            height="auto"
+            width="100%"
+            src="https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg"
+            alt="green iguana"
+          />
         </MDBox>
         <MDTypography variant="button" fontWeight="light" color="text">
           {count}
